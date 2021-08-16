@@ -5,7 +5,7 @@ from game.view import GameView
 from settings import FPS,ALL_PASS_BG, WIN_STAGE_BG
 from pygame import mixer  #音樂新增
 
-ygame.mixer.init
+pygame.mixer.init
 pygame.mixer.music.load("music","bg_music.wav")
 
 class Game:
