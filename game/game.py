@@ -5,6 +5,8 @@ from game.view import GameView
 from settings import FPS,ALL_PASS_BG, WIN_STAGE_BG
 from pygame import mixer  #音樂新增
 
+ygame.mixer.init
+pygame.mixer.music.load("music","bg_music.wav")
 
 class Game:
     def __init__(self,player:int) -> None:
@@ -46,5 +48,26 @@ class Game:
         return self.quit_game
     def mute(self,mute:bool):
         self.game_model.mute = mute
-    
+        
+
+class Music:
+    def __init__(self, subject):
+        subject.register(self)
+
+    def update(self, user_request: str, model):
+        """music on"""
+        if user_request == "music":
+            pygame.mixer.music.unpause()
+            model.sound.play()
+
+
+class Muse:
+    def __init__(self, subject):
+        subject.register(self)
+
+    def update(self, user_request: str, model):
+        """music off"""
+        if user_request == "mute":
+            pygame.mixer.music.pause()
+            model.sound.play()
     
