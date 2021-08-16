@@ -3,6 +3,10 @@ import pygame
 import os
 from settings import *
 import pygame.freetype
+from pygame import mixer
+
+mixer.music.load('music','Choosing.wav')
+mixer.music.play(-1)
 
 class an_event:
     def __init__(self,question:an_question,select1:an_decision,select2:an_decision,select3:an_decision) -> None:
