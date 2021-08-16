@@ -3,6 +3,7 @@ from game.controller import GameControl
 from game.model import GameModel
 from game.view import GameView
 from settings import FPS,ALL_PASS_BG, WIN_STAGE_BG
+from pygame import mixer  #音樂新增
 
 
 class Game:
@@ -45,3 +46,5 @@ class Game:
         return self.quit_game
     def mute(self,mute:bool):
         self.game_model.mute = mute
+    
+    
